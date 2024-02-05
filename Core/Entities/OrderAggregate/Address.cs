@@ -6,21 +6,21 @@ namespace Core.Entities.OrderAggregate
         {
         }
 
-        public Address(string firstName, string lastname, string street, string city, string state, string zipcode)
+        public Address(string firstName, string lastName, string street, string city, string state, string zipcode)
         {
             FirstName = firstName;
-            Lastname = lastname;
+            LastName = lastName;
             Street = street;
             City = city;
             State = state;
-            ZipCode = zipcode;
+            Zipcode = zipcode;
         }
 
         public string FirstName { get; set; }
-        public string Lastname { get; set; }
+        public string LastName { get; set; }
         public string Street { get; set; }
         public string City { get; set; }
         public string State { get; set; }
-        public string ZipCode { get; set; }
+        public string Zipcode { get; set; }
     }
 }
