@@ -41,8 +41,8 @@ export class CheckoutPaymentComponent implements OnInit {
         this.cardNumber = elements.create('cardNumber');
         this.cardNumber.mount(this.cardNumberElement?.nativeElement);
         this.cardNumber.on('change', event => {
+          this.cardNumberComplete = event.complete;
           if (event.error) {
-            this.cardNumberComplete = event.complete;
             this.cardErrors = event.error.message;
           } else {
             this.cardErrors = null;
@@ -76,9 +76,9 @@ export class CheckoutPaymentComponent implements OnInit {
 
   get paymentFormComplete() {
     return this.checkoutForm?.get('paymentForm')?.valid 
-    && this.cardNumberComplete && 
-    this.cardExpiryComplete && 
-    this.cardCvcComplete;
+    && this.cardNumberComplete 
+    && this.cardExpiryComplete 
+    && this.cardCvcComplete;
   }
 
   async submitOrder() {

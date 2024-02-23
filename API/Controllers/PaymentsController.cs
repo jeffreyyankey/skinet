@@ -10,7 +10,7 @@ namespace API.Controllers
 {
     public class PaymentsController: BaseApiController
     {
-        private const string WhSecret = "whsec_2ea309a2186f080eafb68f9ce28eb1ef50fd69ffbada3fdadbe87a50dead6839";
+        private const string WhSecret = "";
         private readonly IPaymentService _paymentService;
         private readonly ILogger<PaymentsController> _logger;
         public PaymentsController(IPaymentService paymentService, ILogger<PaymentsController> logger)
