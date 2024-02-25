@@ -15,12 +15,7 @@ namespace API.Extensions
         {
             services.AddDbContext<StoreContext>(opt =>
             {
-                opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
-            });
-
-            services.AddDbContext<AppIdentityDbContext>(opt =>
-            {
-                opt.UseSqlite(config.GetConnectionString("IdentityConnection"));
+                opt.UseNpgsql(config.GetConnectionString("DefaultConnection"));
             });
 
             services.AddSingleton<IConnectionMultiplexer>(c =>
